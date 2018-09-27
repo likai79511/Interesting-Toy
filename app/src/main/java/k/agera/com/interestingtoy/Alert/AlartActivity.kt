@@ -1,5 +1,6 @@
 package k.agera.com.interestingtoy.Alert
 
+import android.graphics.Color
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
@@ -26,7 +27,7 @@ class AlartActivity : AppCompatActivity(), View.OnClickListener {
         findViewById<View>(R.id.btn_top_toast).setOnClickListener(this)
         findViewById<View>(R.id.custom_toast).setOnClickListener(this)
         findViewById<View>(R.id.btn_normal_snackbar).setOnClickListener(this)
-        findViewById<View>(R.id.btn_top_snackbar).setOnClickListener(this)
+        findViewById<View>(R.id.btn_action_snackbar).setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -45,16 +46,23 @@ class AlartActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btn_normal_snackbar -> {
                 showNormalSnackBar()
             }
-            R.id.btn_top_snackbar -> {
-                showTopSnackbar()
+            R.id.btn_action_snackbar -> {
+                showActionSnackbar()
             }
         }
 
     }
 
 
-    fun showTopSnackbar(){
-        
+    fun showActionSnackbar() {
+        var sb = Snackbar.make(mRoot, "This is take action snackbar", Snackbar.LENGTH_LONG)
+                .setAction("Click to disapper", {
+                    Toast.makeText(applicationContext, "click button", Toast.LENGTH_SHORT).show()
+                })
+                .setActionTextColor(Color.GREEN)
+        sb.view.setBackgroundColor(Color.GRAY)
+        sb.show()
+
     }
 
     fun showNormalSnackBar() {

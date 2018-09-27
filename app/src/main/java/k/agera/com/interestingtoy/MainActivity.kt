@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import k.agera.com.interestingtoy.Alert.AlartActivity
+import k.agera.com.interestingtoy.Loadingbar.LoadingbarActivity
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -17,7 +18,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     fun initEvents() {
         findViewById<View>(R.id.btn_alert).setOnClickListener(this)
-        findViewById<View>(R.id.btn_dialog).setOnClickListener(this)
         findViewById<View>(R.id.btn_loadingbar).setOnClickListener(this)
         findViewById<View>(R.id.btn_pulltorefresh).setOnClickListener(this)
         findViewById<View>(R.id.btn_navigateview).setOnClickListener(this)
@@ -33,6 +33,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
             R.id.btn_alert -> {
                 intent = Intent(this@MainActivity, AlartActivity::class.java)
+            }
+
+            R.id.btn_loadingbar -> {
+                intent = Intent(this@MainActivity, LoadingbarActivity::class.java)
             }
         }
         intent?.let {
