@@ -3,12 +3,12 @@
     package="k.agera.com.interestingtoy">
 
     <application
+        android:name=".MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".MyApp"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -18,7 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Alert.AlartActivity" />
-        <activity android:name=".Loadingbar.LoadingbarActivity"></activity>
+        <activity android:name=".Loadingbar.LoadingbarActivity" />
+        <activity android:name=".Loadingbar.PbType1Activity"></activity>
     </application>
 
 </manifest>
